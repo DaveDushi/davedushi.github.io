@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project }, { key }) {
   return (
-    <div>
+    <div id={key}>
       <div class="card card-compact w-96 bg-base-100 shadow-xl mx-2 my-2">
         <figure>
           <video width="400" controls>

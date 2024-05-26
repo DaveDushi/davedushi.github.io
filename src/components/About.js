@@ -4,8 +4,8 @@ export default function () {
   return (
     <div>
       <section id="about">
-        <div class="hero min-h-screen bg-base-200">
-          <div class="hero-content flex-col lg:flex-row-reverse sm:py-6">
+        <div class="hero min-h-screen bg-base-200 sm:py-32">
+          <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="avatar mx-16">
               <div class="w-64 rounded-full lg:w-96">
                 <img

@@ -10,7 +10,7 @@ export default function Projects() {
 
         <div class="flex flex-wrap justify-around lg:mx-10 lg:my-6">
           {projects.map((project) => {
-            return <ProjectCard project={project} />;
+            return <ProjectCard project={project} key={project.id} />;
           })}
         </div>
       </section>
