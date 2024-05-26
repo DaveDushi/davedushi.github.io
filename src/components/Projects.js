@@ -1,21 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
-import axios from "axios";
+import projects from "../db/projects.json";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/projects")
-      .then((response) => {
-        setProjects(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
   return (
     <div>
       <section id="projects">

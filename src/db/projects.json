@@ -1,0 +1,23 @@
+[
+    {
+        "_id" : 1,
+        "name" : "MarkeTeller",
+        "description" : "Empowering Investors: Discover Stocks, Generate Reports, and Make Informed Decisions with AI-Powered Insights",
+        "link" : "https://github.com/DaveDushi/MarkeTeller",
+        "videoPath" : "https://storage.googleapis.com/personal-bucket-dave-d/quickstart-folder/David%20Dusi%20MarkeTeller%20Recording.mp4"
+    },
+    {
+        "_id" : 2,
+        "name" : "Ethereum Block Explorer",
+        "description" : "A simple Ethereum Block Explorer. Search any block on the Ethereum Blockchain or check out the latest block.",
+        "link" : "https://github.com/DaveDushi/blockexplorer",
+        "videoPath" : "https://storage.googleapis.com/personal-bucket-dave-d/quickstart-folder/React%20App%20-%20Personal%20-%20Microsoft%E2%80%8B%20Edge%202024-05-23%2016-12-32.mp4"
+    },
+    {
+        "_id" : 3,
+        "name" : "WriterTube",
+        "description" : "WriterTube is your go-to tool for transforming YouTube videos into beautifully crafted articles. With WriterTube, you can seamlessly convert spoken content from your favorite YouTube videos into written form, allowing you to digest, analyze, and share the information in a more convenient and accessible format.",
+        "link" : "https://github.com/DaveDushi/WriterTube",
+        "videoPath" : "https://storage.googleapis.com/personal-bucket-dave-d/quickstart-folder/tubewriter_vid.mp4"
+    }
+]
