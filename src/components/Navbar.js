@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-export default function () {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +22,10 @@ export default function () {
     };
   }, []);
 
+  const handleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <div>
       <div
@@ -28,63 +35,67 @@ export default function () {
             : "bg-neutral text-neutral-content bg-base-100"
         }`}
       >
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-24"
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div
+              tabIndex="0"
+              role="button"
+              className="btn btn-ghost lg:hidden"
+              onClick={handleDropdown}
             >
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+              <FontAwesomeIcon
+                icon={faBars}
+                className="text-neutral-content"
+                size="xl"
+              />
+            </div>
           </div>
-          <a class="btn btn-ghost text-3xl lg:text-5xl" href="#">
+          <a className="btn btn-ghost text-3xl lg:text-5xl" href="#">
             DD
           </a>
         </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
+        <div className="navbar-end hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
             <li>
-              <a class="text-xl" href="#about">
+              <a className="text-xl" href="#about">
                 About
               </a>
             </li>
             <li>
-              <a class="text-xl" href="#projects">
+              <a className="text-xl" href="#projects">
                 Projects
               </a>
             </li>
             <li>
-              <a class="text-xl" href="#contact">
+              <a className="text-xl" href="#contact">
                 Contact
               </a>
             </li>
           </ul>
         </div>
       </div>
+
+      {isDropdownOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-65 z-20 flex flex-col justify-top items-left">
+          <ul className="menu menu-vertical p-4 text-white text-xl w-full text-center">
+            <li className="p-4">
+              <a href="#about" onClick={handleDropdown}>
+                About
+              </a>
+            </li>
+            <li className="p-4">
+              <a href="#projects" onClick={handleDropdown}>
+                Projects
+              </a>
+            </li>
+            <li className="p-4">
+              <a href="#contact" onClick={handleDropdown}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
