@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function () {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <div class="navbar bg-neutral text-neutral-content bg-base-100 fixed top-0 w-full z-10">
+      <div
+        className={`navbar fixed top-0 w-full z-10 transition-colors duration-500 ${
+          isScrolled
+            ? "bg-neutral bg-opacity-85 text-neutral-content"
+            : "bg-neutral text-neutral-content bg-base-100"
+        }`}
+      >
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
